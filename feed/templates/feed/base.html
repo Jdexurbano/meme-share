@@ -1,0 +1,20 @@
+<!-- @format -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/feed-style.css' %}" />
+    <title>Meme Share</title>
+  </head>
+  <body>
+    <h1>Meme Share</h1>
+    <div class="btn-container">
+      <a href=""><button class="btn-signin">Sign In</button></a>
+      <a href="{% url 'sign_up' %}"
+        ><button class="btn-signup">Sign Up</button></a
+      >
+    </div>
+  </body>
+</html>

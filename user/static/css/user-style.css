@@ -1,0 +1,88 @@
+/** @format */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: #151b28;
+  --sencondary-color: #2a3142;
+  --accent-color: #2334a1;
+  --white: #fcfcfc;
+  --font: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--primary-color);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  font-family: var(--font);
+}
+
+.signUp-container {
+  border: none;
+  border-radius: 20px;
+  width: 480px;
+  padding: 25px 20px 50px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sencondary-color);
+}
+
+.container-1 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.contaier-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+h3 {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 500;
+}
+
+input {
+  height: 20px;
+  width: 180px;
+  padding: 10px 12px;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  border-radius: 10px;
+  font-size: 18px;
+  caret-color: var(--white);
+  color: var(--white);
+}
+input:focus {
+  outline: none;
+}
+
+.password,
+.username {
+  width: 390px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 10px;
+  width: 170px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  color: var(--white);
+  font-weight: 200;
+  font-size: 20px;
+  transition: scale 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+button:active {
+  scale: 0.95;
+}
