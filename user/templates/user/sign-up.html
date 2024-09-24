@@ -5,12 +5,12 @@
   {% csrf_token %}
   <h3>Create Account</h3>
   <div class="container-1">
-    <input type="text" placeholder="First Name:" class="first-name" />
-    <input type="text" placeholder="Last Name:" class="last-name" />
+    <input type="text" placeholder="First Name:" class="first-name" required />
+    <input type="text" placeholder="Last Name:" class="last-name" required />
   </div>
   <div class="contaier-2">
-    <input type="text" placeholder="Username:" class="username" />
-    <input type="password" placeholder="Password:" class="password" />
+    <input type="text" placeholder="Username:" class="username" required />
+    <input type="password" placeholder="Password:" class="password" required />
   </div>
   <button type="submit">Sign Up</button>
 </form>
