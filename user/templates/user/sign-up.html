@@ -1,16 +1,40 @@
 <!-- @format -->
 
 {% extends 'user/base.html' %} {% block sign_up %}
-<form class="signUp-container" action="" method="POST">
+<form class="signUp-container" action="{% url 'sign_up' %}" method="POST">
   {% csrf_token %}
   <h3>Create Account</h3>
   <div class="container-1">
-    <input type="text" placeholder="First Name:" class="first-name" required />
-    <input type="text" placeholder="Last Name:" class="last-name" required />
+    <input
+      type="text"
+      name="firstname"
+      placeholder="First Name:"
+      class="first-name"
+      required
+    />
+    <input
+      type="text"
+      name="lastname"
+      placeholder="Last Name:"
+      class="last-name"
+      required
+    />
   </div>
   <div class="contaier-2">
-    <input type="text" placeholder="Username:" class="username" required />
-    <input type="password" placeholder="Password:" class="password" required />
+    <input
+      type="text"
+      name="username"
+      placeholder="Username:"
+      class="username"
+      required
+    />
+    <input
+      type="password"
+      name="password"
+      placeholder="Password:"
+      class="password"
+      required
+    />
   </div>
   <button type="submit">Sign Up</button>
 </form>
