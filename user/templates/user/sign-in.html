@@ -1,6 +1,8 @@
 <!-- @format -->
 
-{% extends 'user/base.html' %} {% block sign_in %}
+{% extends 'user/base.html' %} {% block sign_in %} {% block title %}
+<title>Sign in | Meme Share</title>
+{% endblock %}
 
 <form action="{% url 'sign_in' %}" method="POST" class="signIn-container">
   {% csrf_token %} {% if messages %} {% for message in messages %}
