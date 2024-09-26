@@ -2,7 +2,9 @@
 
 {% extends 'user/base.html' %} {% block sign_up %}
 <form class="signUp-container" action="{% url 'sign_up' %}" method="POST">
-  {% csrf_token %}
+  {% csrf_token %} {% if messages %} {% for message in messages %}
+  <p style="color: red; font-size: 12px; display: block">{{message}}</p>
+  {% endfor %} {% endif %}
   <h3>Create Account</h3>
   <div class="container-1">
     <input
@@ -30,8 +32,15 @@
     />
     <input
       type="password"
-      name="password"
+      name="password1"
       placeholder="Password:"
+      class="password"
+      required
+    />
+    <input
+      type="password"
+      name="password2"
+      placeholder="Confirm Password:"
       class="password"
       required
     />
