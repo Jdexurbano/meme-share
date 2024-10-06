@@ -1,4 +1,5 @@
 {% extends 'feed/base.html' %} {% block home %} {% include 'feed/navbar.html' %}
+{% load static %}
 <main>
   <div class="grid-container">
     <div class="grid-item left">
@@ -25,12 +26,21 @@
         {% for post in posts %}
         <div class="post-container">
           <div class="info-container">
+            {% if post.user.profile.profile_link %}
             <img
               src="{{post.user.profile.profile_link}}"
               alt=""
               srcset=""
               class="user-profile"
             />
+            {% else %}
+            <img
+              src="{% static 'image/default-profile-icon.jpg' %}"
+              alt=""
+              srcset=""
+              class="user-profile"
+            />
+            {% endif %}
             <p class="user-name">{{post.user}}</p>
           </div>
           <p style="color: var(--white)">{{post.caption}}</p>
