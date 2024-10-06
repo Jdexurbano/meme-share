@@ -11,7 +11,7 @@ def index(request):
 @login_required
 def home_page(request):
     #get all the data from  the Post,User,Profile
-    posts = Post.objects.select_related('user__profile')
+    posts = Post.objects.select_related('user__profile').order_by('-created_at')
 
     context = {
         'posts':posts
