@@ -30,7 +30,12 @@
           </div>
           <p style="color: var(--white)">{{post.caption}}</p>
           <div class="img-content">
-            <img src="" alt="content" srcset="" class="post-content" />
+            <img
+              src="{{post.image_link}}"
+              alt="content"
+              srcset=""
+              class="post-content"
+            />
           </div>
         </div>
         {% endfor %}
