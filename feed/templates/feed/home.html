@@ -25,7 +25,12 @@
         {% for post in posts %}
         <div class="post-container">
           <div class="info-container">
-            <img src="" alt="" srcset="" class="user-profile" />
+            <img
+              src="{{post.user.profile.profile_link}}"
+              alt=""
+              srcset=""
+              class="user-profile"
+            />
             <p class="user-name">{{post.user}}</p>
           </div>
           <p style="color: var(--white)">{{post.caption}}</p>
