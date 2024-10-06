@@ -1,0 +1,14 @@
+{% block navbar %}
+
+<header>
+  <a href="{% url 'home' %}" style="cursor: pointer"
+    ><h1 class="nav-title">Meme Share</h1></a
+  >
+  <nav>
+    <a href="{% url 'sign_out' %}"
+      ><button class="btn-logout">Logout</button></a
+    >
+  </nav>
+</header>
+
+{% endblock %}

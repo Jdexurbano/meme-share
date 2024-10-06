@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def index(request):
-    return render(request,'feed/base.html')
+    return render(request,'feed/auth.html')
 
 @login_required
 def home_page(request):

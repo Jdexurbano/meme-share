@@ -1,18 +1,46 @@
-<!-- @format -->
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meme Share</title>
-  </head>
-  <body>
-    <h1>
-      {% if messages %} {% for message in messages %}
-      <h1>{{message}}</h1>
-      {% endfor %} {% endif %}
-    </h1>
-    <a href="{% url 'sign_out' %}"><button>Logout</button></a>
-  </body>
-</html>
+{% extends 'feed/base.html' %} {% block home %} {% include 'feed/navbar.html' %}
+<main>
+  <div class="grid-container">
+    <div class="grid-item left">
+      <ul>
+        <li>
+          <a href="" style="text-decoration: underline"
+            ><span><i class="fa fa-home"></i>Home</span></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><span><i class="fa fa-user"></i>Profile</span></a
+          >
+        </li>
+        <li>
+          <a href=""
+            ><span><i class="fa fa-gear"></i>Settings</span></a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="grid-item center">
+      <div class="scrollable-content">
+        {% for post in posts %}
+        <div class="post-container">
+          <div class="info-container">
+            <img src="" alt="" srcset="" class="user-profile" />
+            <p class="user-name">{{post.user}}</p>
+          </div>
+          <p style="color: var(--white)">{{post.caption}}</p>
+          <div class="img-content">
+            <img src="" alt="content" srcset="" class="post-content" />
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="grid-item right">
+      <a href="">
+        <span> <i class="fa fa-plus"></i></span>
+      </a>
+    </div>
+  </div>
+</main>
+{% endblock %}

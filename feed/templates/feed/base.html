@@ -6,17 +6,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/feed-style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Meme Share</title>
   </head>
   <body>
-    <h1>Meme Share</h1>
-    <div class="btn-container">
-      <a href="{% url 'sign_in' %}"
-        ><button class="btn-signin">Sign In</button></a
-      >
-      <a href="{% url 'sign_up' %}"
-        ><button class="btn-signup">Sign Up</button></a
-      >
-    </div>
+    <div class="auth-container">{% block auth %} {% endblock %}</div>
+    <div class="home-container">{% block home %}{% endblock %}</div>
   </body>
 </html>
