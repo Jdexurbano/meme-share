@@ -10,7 +10,8 @@ def index(request):
 
 @login_required
 def home_page(request):
-    posts = Post.objects.all().order_by('-created_at')
+    #get all the data from  the Post,User,Profile
+    posts = Post.objects.select_related('user__profile')
 
     context = {
         'posts':posts
