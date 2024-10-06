@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def add_post(request):
-    return render(request,'post/base.html')
+    return render(request,'post/add_post.html')

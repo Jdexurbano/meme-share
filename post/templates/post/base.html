@@ -1,11 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/post-style.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    {% block title %}
     <title>Meme Share</title>
+    {% endblock %}
   </head>
   <body>
-    <h1>add post</h1>
+    <span
+      ><a href="{% url 'home' %}"><i class="fa fa-arrow-left"></i></a
+    ></span>
+    <main>{% block add_post %} {% endblock %}</main>
   </body>
 </html>

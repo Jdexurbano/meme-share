@@ -1,0 +1,24 @@
+{% extends 'post/base.html' %} {% block title %}
+<title>Add meme | Meme Share</title>
+{% endblock %} {% block add_post %}
+<form action="" method="POST" class="add-form">
+  <p class="form-title">Add meme</p>
+  {% csrf_token %}
+  <input
+    type="text"
+    name="caption"
+    id="caption"
+    placeholder="Caption:"
+    class="caption"
+  />
+  <input
+    type="text"
+    name="image_link"
+    id="image_link"
+    placeholder="Image Link:"
+    class="caption"
+    required
+  />
+  <button type="submit" class="btn-add">Post</button>
+</form>
+{% endblock %}
