@@ -1,0 +1,59 @@
+{% extends 'user/base.html' %} {% block profile %}
+
+<div class="profile-container">
+  <div class="left-item">
+    <ul>
+      <li>
+        <a href="{% url 'home' %}"
+          ><span><i class="fa fa-home"></i>Home</span></a
+        >
+      </li>
+      <li>
+        <a href="{% url 'profile' %}" style="text-decoration: underline"
+          ><span><i class="fa fa-user"></i>Profile</span></a
+        >
+      </li>
+      <li>
+        <a href=""
+          ><span><i class="fa fa-gear"></i>Settings</span></a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="center-item">
+    <div class="scrollable-content">
+      <div class="post-container">
+        <div class="info-container">
+          <img
+            src="{{request.user.profile.profile_link}}"
+            alt=""
+            srcset=""
+            class="user-profile"
+          />
+
+          <p class="user-name">Dexter</p>
+        </div>
+        <p style="color: var(--white)">caption</p>
+        <div class="img-content">
+          <img
+            src="https://i.pinimg.com/236x/16/4a/e7/164ae78241040ee5f326e7cfae9bef1b.jpg"
+            alt="content"
+            srcset=""
+            class="post-content"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-item">
+    <img
+      src="{{request.user.profile.profile_link}}"
+      alt=""
+      srcset=""
+      class="img-profile"
+    />
+    <p class="profile-name">{{request.user.username}}</p>
+  </div>
+</div>
+
+{% endblock %}
