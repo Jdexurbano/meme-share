@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from post.models import Post
 
 # Create your views here.
 def sign_up(request):
@@ -49,4 +50,10 @@ def sign_out(request):
     return redirect('index')
 
 def profile(request):
-    return render(request,'user/profile.html')
+    user = request.user
+    #get all the post of the current user
+    posts = user.posts.all().order_by('-created_at')
+    context = {
+        'posts':posts,
+    }
+    return render(request,'user/profile.html',context)

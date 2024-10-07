@@ -22,6 +22,7 @@
   </div>
   <div class="center-item">
     <div class="scrollable-content">
+      {% for post in posts %}
       <div class="post-container">
         <div class="info-container">
           <img
@@ -31,18 +32,19 @@
             class="user-profile"
           />
 
-          <p class="user-name">Dexter</p>
+          <p class="user-name">{{post.user}}</p>
         </div>
-        <p style="color: var(--white)">caption</p>
+        <p style="color: var(--white)">{{post.caption}}</p>
         <div class="img-content">
           <img
-            src="https://i.pinimg.com/236x/16/4a/e7/164ae78241040ee5f326e7cfae9bef1b.jpg"
+            src="{{post.image_link}}"
             alt="content"
             srcset=""
             class="post-content"
           />
         </div>
       </div>
+      {% endfor %}
     </div>
   </div>
   <div class="right-item">
